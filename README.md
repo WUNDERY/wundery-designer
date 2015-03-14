@@ -1,6 +1,6 @@
 # Designers Guide
 
-You're a designer and want to publish your design on the WUNDERY platform? 
+You're a designer and want to publish your design on the WUNDERY platform?
 
 * Contact us (support@wundery.com)
 * Get a free sandbox store
@@ -10,7 +10,7 @@ You're a designer and want to publish your design on the WUNDERY platform?
 
 ## Required files
 
-Only one file is required: the design master. You may choose an arbitray name, e.g. `master.html` or `index.html` but make sure to set it as master file in the WUNDERY designer. 
+Only one file is required: the design master. You may choose an arbitray name, e.g. `master.html` or `index.html` but make sure to set it as master file in the WUNDERY designer.
 
 ## Design configuration
 
@@ -42,6 +42,8 @@ To make your design easily customizable for the store owner, you may create a so
   ]
 }
 ```
+
+**IMPORTANT** - Your manifest file must contain valid JSON. If it does not, no option at all will be shown to the store owner. We recommend using a validator, e.g. http://jsonlint.com.
 
 The top-level structure of the manifest file is defined as follows:
 
