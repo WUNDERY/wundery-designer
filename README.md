@@ -60,3 +60,35 @@ Every option has the following structure:
 | default_value | The options default value. This will be used if the user did not define another value. |
 | title | A short explanation of the option that will be displayed in the user interface. If it is defined as a string, it is assumed to be the english title. Otherwise it is assumed to be a hash containing locales as keys and translated titles as values. The following values are both valid: `"title": "..."` or `"title": { "de": "...", "en": "...", ... }` |
 | description | Same as title but used for a longer explanation |
+
+## Template reference
+
+### Liquid
+
+You can use the following tags:
+
+#### General store attributes
+
+* `{{ store.id }}`
+* `{{ store.title }}`
+* `{{ store.description }}`
+* `{{ store.description_sanitized }}`
+* `{{ store.slogan }}`
+* `{{ store.facebook_url }}`
+* `{{ store.pinterest_url }}`
+* `{{ store.twitter_url }}`
+* `{{ store.google_analytics_id }}`
+* `{{ store.display_net }}`
+* `{{ store.url }}`
+* `{{ store.description }}`
+* `{{ store.locale }}`
+
+#### Objects and collections on the store
+
+* `{{ store.homepage_category }}`
+* `{{ store.homepage_products }}`
+* `{{ store.categories }}`
+* `{{ store.pages }}`
+* `{{ store.payment_methods }}`
+* `{{ store.shipping_methods }}`
+* `{{ store.logo }}`
