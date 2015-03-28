@@ -9,7 +9,7 @@ You're a designer and want to publish your design on the WUNDERY platform?
 * Publish on the WUNDERY Platform
 * Earn money
 
-
+## Contents of this guide (work in progress)
 
 <!-- toc -->
 
