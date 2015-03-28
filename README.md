@@ -1,3 +1,4 @@
+
 # Designers Guide
 
 You're a designer and want to publish your design on the WUNDERY platform?
@@ -7,6 +8,20 @@ You're a designer and want to publish your design on the WUNDERY platform?
 * Build your design
 * Publish on the WUNDERY Platform
 * Earn money
+
+
+
+<!-- toc -->
+
+* [Required files](#required-files)
+* [Design configuration](#design-configuration)
+* [Template reference](#template-reference)
+  * [Liquid engine](#liquid-engine)
+    * [General store attributes](#general-store-attributes)
+    * [Objects and collections on the store](#objects-and-collections-on-the-store)
+
+<!-- toc stop -->
+
 
 ## Required files
 
