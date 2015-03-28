@@ -63,7 +63,7 @@ Every option has the following structure:
 
 ## Template reference
 
-### Liquid
+### Liquid engine
 
 You can use the following tags:
 
@@ -85,8 +85,8 @@ You can use the following tags:
 
 #### Objects and collections on the store
 
-* `{{ store.homepage_category }}`
-* `{{ store.homepage_products }}`
+* `{{ store.homepage_category }}` - Returns the stores homepage category.
+* `{{ store.homepage_products }}` - Shortcut to the stores homepage category products.
 * `{{ store.categories }}`
 * `{{ store.pages }}`
 * `{{ store.payment_methods }}`
