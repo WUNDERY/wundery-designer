@@ -107,3 +107,7 @@ You can use the following tags:
 * `{{ store.payment_methods }}`
 * `{{ store.shipping_methods }}`
 * `{{ store.logo }}`
+
+#### Tags
+
+* `{{ setting "background_color", "#ffffff" }}` - Returns the value of a setting `background_color` of the current design. You should also set a default value in case the setting is not defined or available.
