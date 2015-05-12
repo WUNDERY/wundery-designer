@@ -13,6 +13,8 @@ You're a designer and want to publish your design on the WUNDERY platform?
 
 
 
+
+
 <!-- toc -->
 
 * [Contents of this guide (work in progress)](#contents-of-this-guide-work-in-progress)
@@ -26,9 +28,11 @@ You're a designer and want to publish your design on the WUNDERY platform?
 * [wundery.js](#wunderyjs)
   * [Basic integration](#basic-integration)
   * [Advanced Integration](#advanced-integration)
-  * [Example: Customize the cart design and show a popup when an item was added to the cart.](#example-customize-the-cart-design-and-show-a-popup-when-an-item-was-added-to-the-cart)
+    * [Example: Customize the cart design and show a popup when an item was added to the cart.](#example-customize-the-cart-design-and-show-a-popup-when-an-item-was-added-to-the-cart)
+    * [Example: Manually add a product to the cart and directly redirect to the checkout page](#example-manually-add-a-product-to-the-cart-and-directly-redirect-to-the-checkout-page)
 
 <!-- toc stop -->
+
 
 
 
