@@ -123,6 +123,8 @@ You can use the following tags:
 
 ## wundery.js
 
+IMPORTANT: This documentation is work in progress. It should give you an idea about what's possible with `wundery.js`. Contact us with feedback or questions via support@wundery.com.
+
 `wundery.js` is a Javascript library providing several methods to communicate with the WUNDERY API. One of it's main purposes is the handling of the little cart boxes. Because of the WUNDERY architecture where all store pages are delivered from a high performance cache, the cart has to be injected dynamically.
 
 ### Basic integration
@@ -215,7 +217,7 @@ cart.injected(function () {
 </script>
 ```
 
-### Example: Customize the cart design and show a popup when an item was added to the cart.
+#### Example: Customize the cart design and show a popup when an item was added to the cart.
 
 **1) Insert your custom cart markup within your page**
 
@@ -268,6 +270,54 @@ jQuery(document).ready(function () {
   cart.refresh();
 });
 
+</script>
+```
+
+#### Example: Manually add a product to the cart and directly redirect to the checkout page
+
+This yould be interesting for you if you want to design a one product page. What you need at hand is the id of your products default variant.
+
+**1) Insert your button markup into your page**
+
+```html
+...
+<button id="add" type="button">
+BUY
+</button>
+...
+```
+
+**2) Make wundery.js available in your page**
+
+Load the `wundery.js` source in the head section of your page:
+
+```html
+<script src="https://js.wundery.js/v2/wundery.js"></script>
+```
+
+**3) Initialize the cart object**
+
+Put the following script directly below the previous script tag within the head section.
+
+```html
+<script type="text/javascript">
+var cart = new Wundery.Cart({ 
+  storeId: "{{ store.id }}"
+});
+
+jQuery(document).ready(function () {
+  var button = jQuery("#add");
+  button.click(function () {
+    cart
+      .add({
+        variant_id: "the id of the variant to add"
+      })
+      .then(function (checkout_item) {
+        // redirect to the checkout page
+        window.location.href = checkout_item.checkout.url;
+      });
+  });
+});
 </script>
 ```
 
