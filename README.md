@@ -147,8 +147,8 @@ Put the following script directly below the previous script tag within the head 
 
 ```html
 <script type="text/javascript">
-var cart = new Wundery.Cart({ 
-  storeId: "{{ store.id }}" 
+var cart = new Wundery.Cart({
+  storeId: "{{ store.id }}"
 });
 cart.setup();
 </script>
@@ -162,9 +162,9 @@ The following script shows several possible methods you may use. Also check the 
 
 ```html
 <script type="text/javascript">
-var cart = new Wundery.Cart({ 
+var cart = new Wundery.Cart({
   storeId: "{{ store.id }}",
-  
+
   // This will trigger debug messages to the browser console.
   // Defaults to false, optional.
   debug: true
@@ -176,14 +176,14 @@ cart.inject();
 // Request a checkout form the WUNDERY API. If none is present
 // in the current session, it will create a new one. If a checkout
 // was created before, it will be fetched.
-// If a checkout is present, but finished (checkout completed by 
+// If a checkout is present, but finished (checkout completed by
 // the customer), a new one will be created.
 cart
   .getCheckout()
   .then(function (checkout) {
     console.log("Checkout returned from WUNDERY API", checkout);
   });
- 
+
 // Discover all interaction elements, e.g. "Add to cart" buttons etc.
 // IMPORTANT: You should do this once the DOM is ready, not earlier.
 cart.discover({
@@ -251,7 +251,7 @@ Put the following script directly below the previous script tag within the head 
 
 ```html
 <script type="text/javascript">
-var cart = new Wundery.Cart({ 
+var cart = new Wundery.Cart({
   storeId: "{{ store.id }}"
 });
 
@@ -267,9 +267,9 @@ jQuery(document).ready(function () {
     // Defaults to true, optional.
     visualize: true
   });
-  
+
   // Refresh the cart box.
-  // This will fetch a new or existing checkout and 
+  // This will fetch a new or existing checkout and
   // insert total, item count and link into the cart box.
   cart.refresh();
 });
@@ -279,7 +279,7 @@ jQuery(document).ready(function () {
 
 #### Example: Manually add a product to the cart and directly redirect to the checkout page
 
-This yould be interesting for you if you want to design a one product page. What you need at hand is the id of your products default variant.
+This could be interesting for you if you want to design a one product page.
 
 **1) Insert your button markup into your page**
 
@@ -301,11 +301,11 @@ Load the `wundery.js` source in the head section of your page:
 
 **3) Initialize the cart object**
 
-Put the following script directly below the previous script tag within the head section.
+Put the following script directly below the previous script tag within the head section on the product page only.
 
 ```html
 <script type="text/javascript">
-var cart = new Wundery.Cart({ 
+var cart = new Wundery.Cart({
   storeId: "{{ store.id }}"
 });
 
@@ -314,7 +314,7 @@ jQuery(document).ready(function () {
   button.click(function () {
     cart
       .add({
-        variant_id: "the id of the variant to add"
+        variant_id: "{{ current_product.default_variant.id }}"
       })
       .then(function (checkout_item) {
         // redirect to the checkout page
