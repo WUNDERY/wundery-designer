@@ -15,6 +15,8 @@ You're a designer and want to publish your design on the WUNDERY platform?
 
 
 
+
+
 <!-- toc -->
 
 * [Contents of this guide (work in progress)](#contents-of-this-guide-work-in-progress)
@@ -30,8 +32,10 @@ You're a designer and want to publish your design on the WUNDERY platform?
   * [Advanced Integration](#advanced-integration)
     * [Example: Customize the cart design and show a popup when an item was added to the cart.](#example-customize-the-cart-design-and-show-a-popup-when-an-item-was-added-to-the-cart)
     * [Example: Manually add a product to the cart and directly redirect to the checkout page](#example-manually-add-a-product-to-the-cart-and-directly-redirect-to-the-checkout-page)
+  * [Page markup](#page-markup)
 
 <!-- toc stop -->
+
 
 
 
@@ -325,3 +329,46 @@ jQuery(document).ready(function () {
 </script>
 ```
 
+### Page markup
+
+Within your page you can declare products so that they can be discovered automatically by  `wundery.js`. This completely takes away the logical part of adding products to the cart from you.
+
+```html
+<div
+  data-wundery-product="{{ current_product.id }}"
+  data-wundery-variants="{{ product.serialized_variants }}">
+
+  ...
+
+  {% for option in current_product.options %}
+    <select data-wundery-option="{{ option.id }}">
+      {% for characteristic in option.characteristics %}
+        <option value="{{ characteristic.id }}">{{ characteristic.title }}</option>
+      {% endfor %}
+    </select>
+  {% endfor %}
+
+  ...
+
+  <div data-wundery-variant-value="inherited_price_gross_formatted"></div>
+  <div data-wundery-variant-value="inherited_price_gross_net"></div>
+  ...
+  <!--
+    You may use everything as a value which is available within
+    {{ product.serialized_variants }}
+  -->
+
+  <div data-wundery-noselection>
+    Please select your options
+  </div>
+
+  <div data-wundery-notavailable>
+    Your selection is not available
+  </div>
+
+  <button type="button" data-wundery-add>
+    <span data-wundery-not-adding>Add to cart</span>
+    <span data-wundery-adding>Adding ...</span>
+  </button>
+</div>
+```
