@@ -111,3 +111,154 @@ You can use the following tags:
 #### Tags
 
 * `{{ setting "background_color", "#ffffff" }}` - Returns the value of a setting `background_color` of the current design. You should also set a default value in case the setting is not defined or available.
+
+## wundery.js
+
+`wundery.js` is a Javascript library providing several methods to communicate with the WUNDERY API. One of it's main purposes is the handling of the little cart boxes. Because of the WUNDERY architecture where all store pages are delivered from a high performance cache, the cart has to be injected dynamically.
+
+### Basic integration
+
+**1) Make wundery.js available in your page**
+
+Load the `wundery.js` source in the head section of your page:
+
+```html
+<script src="https://js.wundery.js/v2/wundery.js"></script>
+```
+
+**2) Initialize the cart object**
+
+Put the following script directly below the previous script tag within the head section.
+
+```html
+<script type="text/javascript">
+var cart = new Wundery.Cart({ 
+  storeId: "{{ store.id }}" 
+});
+cart.setup();
+</script>
+```
+
+That's it. This will inject the little cart box in your store and handle all cart interactions.
+
+### Advanced Integration
+
+The following script shows several possible methods you may use. Also check the specific use cases below.
+
+```html
+<script type="text/javascript">
+var cart = new Wundery.Cart({ 
+  storeId: "{{ store.id }}",
+  
+  // This will trigger debug messages to the browser console.
+  // Defaults to false, optional.
+  debug: true
+});
+
+// Inject only the box, do nothing else
+cart.inject();
+
+// Request a checkout form the WUNDERY API. If none is present
+// in the current session, it will create a new one. If a checkout
+// was created before, it will be fetched.
+// If a checkout is present, but finished (checkout completed by 
+// the customer), a new one will be created.
+cart
+  .getCheckout()
+  .then(function (checkout) {
+    console.log("Checkout returned from WUNDERY API", checkout);
+  });
+ 
+// Discover all interaction elements, e.g. "Add to cart" buttons etc.
+// IMPORTANT: You should do this once the DOM is ready, not earlier.
+cart.discover({
+  // shows all discovered elements.
+  // Defaults to true, optional.
+  visualize: true
+});
+
+// Add an item to the current checkout.
+cart.add({
+  variantId: "...",
+  quantity: 2
+});
+
+// refreshes the cart box.
+cart.refresh();
+
+// Callbacks
+
+// After an item was added to the cart
+cart.added(function (checkout_item) {
+  console.log("Item was added to the cart", checkout_item);
+});
+
+// After an item was added to the cart
+cart.addFailed(function () {
+  console.log("Failed to add item, API not available or server error");
+});
+
+// Register callbacks that are executed after injection
+cart.injected(function () {
+  console.log("Cart was injected");
+});
+
+</script>
+```
+
+### Example: Customize the cart design and show a popup when an item was added to the cart.
+
+**1) Insert your custom cart markup within your page**
+
+You may apply whatever styling (CSS) you like. Just make sure that you give a class `.wundery-cart` to the outer container.
+
+```html
+<div class="wundery-cart">
+  <!-- The link to the cart will be injected automatically -->
+  <a class="wundery-cart-link">
+    My Custom Cart
+    (<span class="wundery-cart-numitems"></span> Items)
+    Total: <span class="wundery-cart-total"></span>
+  </a>
+</div>
+```
+**2) Make wundery.js available in your page**
+
+Load the `wundery.js` source in the head section of your page:
+
+```html
+<script src="https://js.wundery.js/v2/wundery.js"></script>
+```
+
+**3) Initialize the cart object**
+
+Put the following script directly below the previous script tag within the head section.
+
+```html
+<script type="text/javascript">
+var cart = new Wundery.Cart({ 
+  storeId: "{{ store.id }}"
+});
+
+// After an item was added to the cart
+cart.added(function (checkout_item) {
+  // your popup logic here (e.g. open a modal)
+});
+
+jQuery(document).ready(function () {
+  // Discover all interaction elements, e.g. "Add to cart" buttons etc.
+  cart.discover({
+    // shows all discovered elements.
+    // Defaults to true, optional.
+    visualize: true
+  });
+  
+  // Refresh the cart box.
+  // This will fetch a new or existing checkout and 
+  // insert total, item count and link into the cart box.
+  cart.refresh();
+});
+
+</script>
+```
+
