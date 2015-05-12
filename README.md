@@ -11,16 +11,25 @@ You're a designer and want to publish your design on the WUNDERY platform?
 
 ## Contents of this guide (work in progress)
 
+
+
 <!-- toc -->
 
+* [Contents of this guide (work in progress)](#contents-of-this-guide-work-in-progress)
 * [Required files](#required-files)
 * [Design configuration](#design-configuration)
 * [Template reference](#template-reference)
   * [Liquid engine](#liquid-engine)
     * [General store attributes](#general-store-attributes)
     * [Objects and collections on the store](#objects-and-collections-on-the-store)
+    * [Tags](#tags)
+* [wundery.js](#wunderyjs)
+  * [Basic integration](#basic-integration)
+  * [Advanced Integration](#advanced-integration)
+  * [Example: Customize the cart design and show a popup when an item was added to the cart.](#example-customize-the-cart-design-and-show-a-popup-when-an-item-was-added-to-the-cart)
 
 <!-- toc stop -->
+
 
 
 ## Required files
