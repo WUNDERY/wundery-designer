@@ -198,7 +198,7 @@ cart.discover({
 
 // Add an item to the current checkout.
 cart.add({
-  variantId: "...",
+  variant_id: "...",
   quantity: 2
 });
 
@@ -322,7 +322,7 @@ jQuery(document).ready(function () {
       })
       .then(function (checkout_item) {
         // redirect to the checkout page
-        window.location.href = checkout_item.checkout.url;
+        window.location.href = checkout_item.checkout.cart_url;
       });
   });
 });
@@ -336,7 +336,7 @@ Within your page you can declare products so that they can be discovered automat
 ```html
 <div
   data-wundery-product="{{ current_product.id }}"
-  data-wundery-variants="{{ product.serialized_variants }}">
+  data-wundery-variants="{{ current_product.serialized_variants }}">
 
   ...
 
