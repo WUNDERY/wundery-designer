@@ -142,7 +142,7 @@ IMPORTANT: This documentation is work in progress. It should give you an idea ab
 Load the `wundery.js` source in the head section of your page:
 
 ```html
-<script type="text/javascript" src="https://js.wundery.js/v2/wundery.js"></script>
+<script type="text/javascript" src="https://js.wundery.com/v2/wundery.js"></script>
 ```
 
 **2) Initialize the cart object**
@@ -246,7 +246,7 @@ You may apply whatever styling (CSS) you like. Just make sure that you give a cl
 Load the `wundery.js` source in the head section of your page:
 
 ```html
-<script type="text/javascript" src="https://js.wundery.js/v2/wundery.js"></script>
+<script type="text/javascript" src="https://js.wundery.com/v2/wundery.js"></script>
 ```
 
 **3) Initialize the cart object**
@@ -300,7 +300,7 @@ BUY
 Load the `wundery.js` source in the head section of your page:
 
 ```html
-<script type="text/javascript" src="https://js.wundery.js/v2/wundery.js"></script>
+<script type="text/javascript" src="https://js.wundery.com/v2/wundery.js"></script>
 ```
 
 **3) Initialize the cart object**
