@@ -1,12 +1,12 @@
 
 # Designers Guide
 
-You're a designer and want to publish your design on the WUNDERY platform?
+You're a designer and want to publish your design on the branchbob platform?
 
-* Contact us (support@wundery.com)
+* Contact us (support@branchbob.com)
 * Get a free sandbox store
 * Build your design
-* Publish on the WUNDERY Platform
+* Publish on the branchbob Platform
 * Earn money
 
 ## Contents of this guide (work in progress)
@@ -42,7 +42,7 @@ You're a designer and want to publish your design on the WUNDERY platform?
 
 ## Required files
 
-Only one file is required: the design master. You may choose an arbitray name, e.g. `master.html` or `index.html` but make sure to set it as master file in the WUNDERY designer.
+Only one file is required: the design master. You may choose an arbitray name, e.g. `master.html` or `index.html` but make sure to set it as master file in the branchbob designer.
 
 ## Design configuration
 
@@ -131,9 +131,9 @@ You can use the following tags:
 
 ## wundery.js
 
-IMPORTANT: This documentation is work in progress. It should give you an idea about what's possible with `wundery.js`. Contact us with feedback or questions via support@wundery.com.
+IMPORTANT: This documentation is work in progress. It should give you an idea about what's possible with `wundery.js`. Contact us with feedback or questions via support@branchbob.com.
 
-`wundery.js` is a Javascript library providing several methods to communicate with the WUNDERY API. One of it's main purposes is the handling of the little cart boxes. Because of the WUNDERY architecture where all store pages are delivered from a high performance cache, the cart has to be injected dynamically.
+`wundery.js` is a Javascript library providing several methods to communicate with the branchbob API. One of it's main purposes is the handling of the little cart boxes. Because of the branchbob architecture where all store pages are delivered from a high performance cache, the cart has to be injected dynamically.
 
 ### Basic integration
 
@@ -177,7 +177,7 @@ var cart = new Wundery.Cart({
 // Inject only the box, do nothing else
 cart.inject();
 
-// Request a checkout form the WUNDERY API. If none is present
+// Request a checkout form the branchbob API. If none is present
 // in the current session, it will create a new one. If a checkout
 // was created before, it will be fetched.
 // If a checkout is present, but finished (checkout completed by
@@ -185,7 +185,7 @@ cart.inject();
 cart
   .getCheckout()
   .then(function (checkout) {
-    console.log("Checkout returned from WUNDERY API", checkout);
+    console.log("Checkout returned from branchbob API", checkout);
   });
 
 // Discover all interaction elements, e.g. "Add to cart" buttons etc.
