@@ -5,7 +5,7 @@ You're a designer and want to publish and sell your design on branchbob's theme 
 
 * Get a free sandbox store: [Signup here](https://www.branchbob.com/accounts/register/en/designer/)
 * Build your design
-* Publish on the branchbob theme store
+* Publish on the [branchbob theme store](https://themes.branchbob.com)
 * Earn money ( Important information to know before you apply. The revenue share for theme partners is 70/30. The theme partner receives 70% of each theme sale.)
 
 # Submitting Process after signup
