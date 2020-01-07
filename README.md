@@ -306,7 +306,7 @@ BUY
 Load the `wundery.js` source in the head section of your page:
 
 ```html
-<script type="text/javascript" src="https://js.wundery.com/v2/wundery.js"></script>
+<script type="text/javascript" src="https://sdk.branchbob.com/js/v5/wundery.js"></script>
 ```
 
 **3) Initialize the cart object**
