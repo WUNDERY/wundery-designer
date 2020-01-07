@@ -1,20 +1,14 @@
 
 # Designers Guide
 
-You're a designer and want to publish your design on the branchbob platform?
+You're a designer and want to publish and sell your design on branchbob's theme store?
 
-* Contact us (support@branchbob.com)
-* Get a free sandbox store
+* Get a free sandbox store: [Signup here](https://www.branchbob.com/accounts/register/en/designer/)
 * Build your design
-* Publish on the branchbob Platform
+* Publish on the branchbob theme store
 * Earn money
 
 ## Contents of this guide (work in progress)
-
-
-
-
-
 
 
 <!-- toc -->
@@ -49,30 +43,42 @@ Only one file is required: the design master. You may choose an arbitray name, e
 To make your design easily customizable for the store owner, you may create a so called manifest file in the JSON format. Name it as you like, e.g. `design.json`, but make sure to set it as manifest file within the designer. The following example shows the available options:
 
 ```json
+
 {
-  "options": [
+  "name": "Theme Name",
+  "engine": "liquid",
+  "master": "master.html",
+  "sections": [
     {
-      "name": "background_color",
-      "type": "color",
-      "default_value": "#c5c5c5",
-      "title": {
-        "de": "Hintergrundfarbe",
-        "en": "Background color"
-      },
-      "description": {
-        "de": "Hintergrundfarbe aller Shopseiten",
-        "en": "Background color of all store pages"
-      }
-    },
+      "name": "general_settings",
+      "title": "General Settings",
+      "display": true,
+      "options": [
+        {
+          "name": "eg. font",
+          "type": "text",
+          "default_value": "Verdana",
+          "title": "Primary Font / Google Font..."
+        },
+        {
+          "name": "color_1",
+          "type": "color",
+          "default_value": "#eb8f73",
+          "title": "Color 1"
+        },
+        
     {
-      "name": "link_color",
-      "type": "color",
-      "default_value": "#000",
-      "title": "Link color",
-      "description": "Background color of all store pages"
+      "name": "categories_enable",
+      "title": "Show Categories",
+      "display": true,
+      "options": [
+      ]
+    }
+      ]
     }
   ]
 }
+
 ```
 
 **IMPORTANT** - Your manifest file must contain valid JSON. If it does not, no option at all will be shown to the store owner. We recommend using a validator, e.g. http://jsonlint.com.
