@@ -1,4 +1,4 @@
-
+![image](https://www.branchbob.com/assets/img/logo.svg)
 # Designers Guide
 
 You're a designer and want to publish and sell your design on branchbob's theme store?
