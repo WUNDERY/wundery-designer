@@ -52,7 +52,7 @@ You're a designer and want to publish and sell your design on branchbob's theme 
     * [Example: Customize the cart design and show a popup when an item was added to the cart.](#example-customize-the-cart-design-and-show-a-popup-when-an-item-was-added-to-the-cart)
     * [Example: Manually add a product to the cart and directly redirect to the checkout page](#example-manually-add-a-product-to-the-cart-and-directly-redirect-to-the-checkout-page)
   * [Page markup](#page-markup)
-  * [Review Process](#review)
+  * [Review Process](#review-process)
  
 
 <!-- toc stop -->
