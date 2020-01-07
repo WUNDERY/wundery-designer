@@ -8,31 +8,6 @@ You're a designer and want to publish and sell your design on branchbob's theme 
 * Publish on the [branchbob theme store](https://themes.branchbob.com)
 * Earn money ( Important information to know before you apply. The revenue share for theme partners is 70/30. The theme partner receives 70% of each theme sale.)
 
-# Submitting Process after signup
-
-1. A demo link to an developer store on branchbob.
-
-2. Theme name.
-
-3. Theme description.
-
-4. Feature list.
-
-5. Theme category.
-
-6. Paypal address to receive payments.
-
-7. Company details (VAT, company name, street, phone number, contact person).
-
-8. Public support email address.
-
-9. Link to your theme documentation.
-
-10. Preview template image (850×1230px):
-
-11. Theme price.
-
-
 ## Contents of this guide (work in progress)
 
 
@@ -442,6 +417,31 @@ Within your page you can declare products so that they can be discovered automat
 </div>
 
 ```
+
+# Submitting Process after signup
+
+1. A demo link to an developer store on branchbob.
+
+2. Theme name.
+
+3. Theme description.
+
+4. Feature list.
+
+5. Theme category.
+
+6. Paypal address to receive payments.
+
+7. Company details (VAT, company name, street, phone number, contact person).
+
+8. Public support email address.
+
+9. Link to your theme documentation.
+
+10. Preview template image (850×1230px):
+
+11. Theme price.
+
 
  ### Review Process
 
