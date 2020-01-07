@@ -382,6 +382,29 @@ Within your page you can declare products so that they can be discovered automat
   {% endfor %}
 
   ...
+ 
+ 
+  <div data-wundery-variant-value="inherited_price_gross_formatted"></div>
+  <div data-wundery-variant-value="inherited_price_gross_net"></div>
+  ...
+  <!--
+    You may use everything as a value which is available within
+    {{ product.serialized_variants }}
+  -->
+
+  <div data-wundery-noselection>
+    Please select your options
+  </div>
+
+  <div data-wundery-notavailable>
+    Your selection is not available
+  </div>
+
+  <button type="button" data-wundery-add>
+    <span data-wundery-not-adding>Add to cart</span>
+    <span data-wundery-adding>Adding ...</span>
+  </button>
+</div>
 
 ```
 
@@ -404,28 +427,18 @@ Within your page you can declare products so that they can be discovered automat
 6. Accessibility check including hover states, colour ratios, and touch targets.
 
 7. Feedback email to developer to inform the theme partner if the theme was approved or rejected. The approved theme will be displayed in the branchbob Theme Store right after the approval.
+
+
 III. Your theme in the branchbob Theme Store
 
 Do not distribute your theme on other marketplaces or third-party channels like ThemeForest, or your own website or try to encite away customers from the branchbob Theme Store.
+IV. Theme Support 
 
-  <div data-wundery-variant-value="inherited_price_gross_formatted"></div>
-  <div data-wundery-variant-value="inherited_price_gross_net"></div>
-  ...
-  <!--
-    You may use everything as a value which is available within
-    {{ product.serialized_variants }}
-  -->
+In case of an e.g. broken layout, dead link, logic error you are responsible for technical issues and critical bugs. Therefore you have to fix the issue in a timely fashion. Moreover branchbob theme partners are responsible for supporting merchants using their themes. Concerning that issue you will need to assist merchants with their theme-related questions via your provided public support email address and theme documentation. Theme Partners are also responsible for keeping their themes up-to-date with core branchbob features.
+V. Theme Layout 
 
-  <div data-wundery-noselection>
-    Please select your options
-  </div>
+ Layout files are very important for your theme because every other template file is rendered inside the active layout. 
 
-  <div data-wundery-notavailable>
-    Your selection is not available
-  </div>
+ master.html 
 
-  <button type="button" data-wundery-add>
-    <span data-wundery-not-adding>Add to cart</span>
-    <span data-wundery-adding>Adding ...</span>
-  </button>
-</div>
+ The file is the default active layout when visitors are browsing your online store and/or website. It usually renders the header content, footer content, navigation, and other global variables.
