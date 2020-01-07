@@ -1,4 +1,5 @@
 ![image](https://www.branchbob.com/assets/img/logo.svg)
+<img src="https://www.branchbob.com/assets/img/logo.svg" width="300"/>
 # Designers Guide
 
 You're a designer and want to publish and sell your design on branchbob's theme store?
