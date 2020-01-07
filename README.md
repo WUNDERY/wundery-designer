@@ -58,12 +58,11 @@ You're a designer and want to publish and sell your design on branchbob's theme 
 <!-- toc stop -->
 
 
-
-
-
 ## Required files
 
 Only one file is required: the design master. You may choose an arbitray name, e.g. `master.html` or `index.html` but make sure to set it as master file in the branchbob designer.
+
+The file is the default active layout when visitors are browsing your online store and/or website. It usually renders the header content, footer content, navigation, and other global variables.
 
 ## Design configuration
 
@@ -128,6 +127,8 @@ Every option has the following structure:
 
 ## Template reference
 
+Download our Demo Theme Speedy, to checkout all available functions. [Download ZIP File](https://www.branchbob.com/designer/speedy-demo.zip)
+
 ### Liquid engine
 
 You can use the following tags:
@@ -147,6 +148,7 @@ You can use the following tags:
 * `{{ store.url }}`
 * `{{ store.description }}`
 * `{{ store.locale }}`
+* `{{ store.sdk.frontline_search_input_snippet }}`
 
 #### Objects and collections on the store
 
@@ -157,6 +159,8 @@ You can use the following tags:
 * `{{ store.payment_methods }}`
 * `{{ store.shipping_methods }}`
 * `{{ store.logo }}`
+
+Download our Demo Theme Speedy, to checkout all available functions.
 
 #### Tags
 
@@ -172,10 +176,14 @@ IMPORTANT: This documentation is work in progress. It should give you an idea ab
 
 **1) Make wundery.js available in your page**
 
-Load the `wundery.js` source in the head section of your page:
+Load the `wundery.js` source in the head or footer section of your page:
 
 ```html
-<script type="text/javascript" src="https://js.wundery.com/v2/wundery.js"></script>
+<link rel="stylesheet" type="text/css" href="{% stylesheet_url yourcssname.css %}">
+
+<script type="text/javascript" src="{{ store.sdk.js }}"></script>
+
+<script src="{% script_url yourjsname.js %}"></script>
 ```
 
 **2) Initialize the cart object**
@@ -184,12 +192,39 @@ Put the following script directly below the previous script tag within the head 
 
 ```html
 <script type="text/javascript">
-var cart = new Wundery.Cart({
-  storeId: "{{ store.id }}"
-});
-cart.setup();
+	var cart = new Wundery.Cart({
+		storeId: "{{ store.id }}",
+		debug: true,
+		apiEndpoint: "{{ store.sdk.storefront_api_endpoint }}",
+		checkoutEndpoint: "{{ store.sdk.checkout_endpoint }}"
+	});
+	cart.setup();
+	var lazyLoadInstance = new LazyLoad({elements_selector: "img.lazyload"});
+	lazyLoadInstance.update();
 </script>
+
 ```
+
+
+**2) Implement shopcart**
+
+Put the following script directly below the previous script tag within the head section.
+
+```html
+<script type="text/javascript">
+	var cart = new Wundery.Cart({
+		storeId: "{{ store.id }}",
+		debug: true,
+		apiEndpoint: "{{ store.sdk.storefront_api_endpoint }}",
+		checkoutEndpoint: "{{ store.sdk.checkout_endpoint }}"
+	});
+	cart.setup();
+	var lazyLoadInstance = new LazyLoad({elements_selector: "img.lazyload"});
+	lazyLoadInstance.update();
+</script>
+
+```
+
 
 That's it. This will inject the little cart box in your store and handle all cart interactions.
 
@@ -408,7 +443,6 @@ Within your page you can declare products so that they can be discovered automat
 
 ```
 
-
  ### Review Process
 
  
@@ -429,16 +463,10 @@ Within your page you can declare products so that they can be discovered automat
 7. Feedback email to developer to inform the theme partner if the theme was approved or rejected. The approved theme will be displayed in the branchbob Theme Store right after the approval.
 
 
-III. Your theme in the branchbob Theme Store
+## Your theme in the branchbob Theme Store
 
 Do not distribute your theme on other marketplaces or third-party channels like ThemeForest, or your own website or try to encite away customers from the branchbob Theme Store.
 IV. Theme Support 
 
 In case of an e.g. broken layout, dead link, logic error you are responsible for technical issues and critical bugs. Therefore you have to fix the issue in a timely fashion. Moreover branchbob theme partners are responsible for supporting merchants using their themes. Concerning that issue you will need to assist merchants with their theme-related questions via your provided public support email address and theme documentation. Theme Partners are also responsible for keeping their themes up-to-date with core branchbob features.
-V. Theme Layout 
 
- Layout files are very important for your theme because every other template file is rendered inside the active layout. 
-
- master.html 
-
- The file is the default active layout when visitors are browsing your online store and/or website. It usually renders the header content, footer content, navigation, and other global variables.
