@@ -466,6 +466,7 @@ Within your page you can declare products so that they can be discovered automat
 ## Your theme in the branchbob Theme Store
 
 Do not distribute your theme on other marketplaces or third-party channels like ThemeForest, or your own website or try to encite away customers from the branchbob Theme Store.
+
 IV. Theme Support 
 
 In case of an e.g. broken layout, dead link, logic error you are responsible for technical issues and critical bugs. Therefore you have to fix the issue in a timely fashion. Moreover branchbob theme partners are responsible for supporting merchants using their themes. Concerning that issue you will need to assist merchants with their theme-related questions via your provided public support email address and theme documentation. Theme Partners are also responsible for keeping their themes up-to-date with core branchbob features.
